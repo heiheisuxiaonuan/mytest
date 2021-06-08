@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<defaultdb> 
+		<jdbcProvider>  
+		  <driver>com.ibm.db2.jcc.DB2Driver</driver>
+			<!-- <serverURL>jdbc:db2://192.168.1.203:50000/DCMA</serverURL>
+			<username>db2admin</username>
+			<password>db2admin</password>-->
+			<serverURL>jdbc:db2://10.1.2.15:50001/DCMA</serverURL>
+			<username>dcuser</username>
+			<password>dcuser@Y2015</password>  
+		</jdbcProvider>
+	</defaultdb>
+	<dcma> 
+		<jdbcProvider>  
+		  <driver>com.ibm.db2.jcc.DB2Driver</driver>
+			<serverURL>jdbc:db2://10.1.2.15:50001/DCMA</serverURL>
+			<username>dcuser</username>
+			<password>dcuser@Y2015</password> 
+			<!-- <serverURL>jdbc:db2://192.168.1.203:50000/DCMA</serverURL>
+			<username>db2admin</username>
+			<password>db2admin</password> -->
+		</jdbcProvider>
+	</dcma>	
+	<dw> 
+		<jdbcProvider>  
+		  <driver>com.ibm.db2.jcc.DB2Driver</driver>
+			<serverURL>jdbc:db2://10.1.12.61:50000/DB2_DW</serverURL>
+			<username>db2inst1</username>
+			<password>db2inst1</password> 
+			<!--<serverURL>jdbc:db2://192.168.1.203:50000/db2_dw</serverURL>
+			<username>db2admin</username>
+			<password>db2admin</password> -->
+		</jdbcProvider>
+	</dw>	
+	<stma> 
+		<jdbcProvider>  
+		  <driver>com.ibm.db2.jcc.DB2Driver</driver>
+			<!-- <serverURL>jdbc:db2://192.168.1.203:50000/datachk</serverURL>
+			<username>db2admin</username>
+			<password>db2admin</password> 
+			<serverURL>jdbc:db2://10.1.2.45:50000/STMA</serverURL>
+			<username>projno1</username>
+			<password>projno123</password> -->
+			<serverURL>jdbc:db2://10.1.2.15:50001/STMA</serverURL>
+			<username>projno1</username>
+			<password>projno123</password>
+		</jdbcProvider>
+	</stma>	
+</config>

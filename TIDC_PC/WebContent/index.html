@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css?1">
+    <style>
+        marquee{
+            position: relative;
+            width: 1060px;
+            height: 245px;
+            width: 1440px;
+            left: -380px;
+        }
+        #box{
+            position: absolute;
+            top: 227px;
+            bottom: 0;
+            width: 380px;
+            height: 14px;
+            background: url("image/box.png") no-repeat;
+            /*background: #1a328d;*/
+            background-size: 100% 100%;
+        }
+        #box2{
+            position: absolute;
+            top: 239px;
+            bottom: 0;
+            width: 1060px;
+            height: 2px;
+            background: #fff;
+            background-size: 100% 100%;
+        }
+        #zans{
+            position: absolute;
+            top: 227px;
+            left: 472px;
+            bottom: 0;
+            width: 380px;
+            height: 14px;
+            background: url("image/box.png") no-repeat;
+            /*background: #1a328d;*/
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="index">
+    <div class="top">
+        <div class="top_tab">
+            <span class="gong_tab tab_bg">
+                <img src="image/gong_2.png" alt="">工业
+            </span>
+            <span class="shang_tab">
+                <img src="image/shang_1.png" alt="">商业
+            </span>
+        </div>
+        <div id="zans"></div>
+        <!--<div id="box2"></div>
+        <marquee behavior="scroll" direction="right" loop="infinite" scrollamount="30" scrolldelay="30" >
+            <div id="box"></div>
+        </marquee>-->
+    </div>
+    <div id="time"></div>
+    <div class="map_div_width" style="position: relative">
+    	<div id="map_xuanfu_num" style="position: absolute;left: 1000px;top: 820px;z-index: 999999;font-size: 48px;color: #FF3C39;"></div>
+        <div class="map_div" id="mainMap" style="position:absolute;"></div>
+        <div class="map_div" id="mainMap2" style="opacity: 0;position: absolute;"></div>
+    </div>
+    <!--工业-->
+    <div class="liang_div">
+        <div class="f_l lia_img">
+            <img src="image/liang_gong.png" alt="">
+            <h3>工业</h3>
+        </div>
+        <div class="f_l lia_b">
+            <div class="l_c_title">
+                <span>产量</span>
+                <em>（箱）</em>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l lia_jd_r">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insProdDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insProdDayGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insProdMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insProdMonthGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insProdYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insProdYearGe">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+                <div class="f_l lia_jd">
+                    <div id="circle_step1">
+
+                    </div>
+                    <p>生产进度</p>
+                </div>
+            </div>
+        </div>
+        <div class="f_l dashed"></div>
+        <div class="f_l lia_c">
+            <div class="l_c_title">
+                <span>销量</span>
+                <em>（箱）</em>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insSalDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insSalDayGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insSalMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insSalMonthGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="insSalYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insSalYearGe">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        <div class="f_l dashed"></div>
+        <div class="f_l lia_d">
+            <div class="l_c_title">
+                <span>销售额</span>
+                <em>（万元）</em>
+                <b>年单箱</b>
+                <b class="dxPr" id="insSingle">0</b>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="insMoneyDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insMoneyDayGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="insMoneyMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insMoneyMonthGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="insMoneyYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="insMoneyYearGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--商业-->
+    <div class="liang_div">
+        <div class="f_l lia_img">
+            <img src="image/liang_shang.png" alt="">
+            <h3>商业</h3>
+        </div>
+        <div class="f_l lia_b">
+            <div class="l_c_title">
+                <span>销量</span>
+                <em>（箱）</em>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l lia_jd_r">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comProdDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comProdDayGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comProdMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comProdMonthGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comProdYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comProdYearGe">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+                <div class="f_l lia_jd">
+                    <div id="circle_step2">
+
+                    </div>
+                    <p>销售进度</p>
+                </div>
+            </div>
+        </div>
+        <div class="f_l dashed"></div>
+        <div class="f_l lia_c">
+            <div class="l_c_title">
+                <span>购进量</span>
+                <em>（箱）</em>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comSalDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comSalDayGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comSalMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comSalMonthGe">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1">
+                            <em><b id="comSalYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">万</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comSalYearGe">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+        <div class="f_l dashed"></div>
+        <div class="f_l lia_d">
+            <div class="l_c_title">
+                <span>销售额</span>
+                <em>（万元）</em>
+                <b>年单箱</b>
+                <b class="dxPr" id="comSingle">0</b>
+            </div>
+            <div class="lia_num">
+                <dl class="f_l">
+                    <dt>
+                        <b class="num_day">日</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="comMoneyDayShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comMoneyDayGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">月</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="comMoneyMonthShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comMoneyMonthGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                    <dt>
+                        <b class="num_day">年</b>
+                        <span class="num_bg new_num_1 yiFive">
+                            <em><b id="comMoneyYearShi"></b></em>
+                        </span>
+                        <b class="num_unit">亿</b>
+                        <span class="num_bg new_num_2">
+                            <i></i>
+                            <em><b id="comMoneyYearGe" class="yiFiveBai">0000</b></em>
+                        </span>
+                    </dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="xiang_kucun">
+        <div>
+            <img src="image/kucun.png" alt="">
+            <dl>
+                <dd>工业库存<em>（箱）</em></dd>
+                <dt>
+                    <span class="num_bg new_num_1">
+                        <em><b id="insStkShi"></b></em>
+                    </span>
+                    <b class="num_unit">万</b>
+                    <span class="num_bg new_num_2">
+                        <i></i>
+                        <em><b id="insStkGe">0000</b></em>
+                    </span>
+                </dt>
+            </dl>
+        </div>
+        <div>
+            <img src="image/kucun.png" alt="">
+            <dl>
+                <dd>商业库存<em>（箱）</em></dd>
+                <dt>
+                    <span class="num_bg new_num_1">
+                        <em><b id="comStkShi"></b></em>
+                    </span>
+                    <b class="num_unit">万</b>
+                    <span class="num_bg new_num_2">
+                        <i></i>
+                        <em><b id="comStkGe">0000</b></em>
+                    </span>
+                </dt>
+            </dl>
+        </div>
+        <div>
+            <img src="image/kucun.png" alt="">
+            <dl>
+                <dd>工商在途<em>（箱）</em></dd>
+                <dt>
+                    <span class="num_bg new_num_1">
+                        <em><b id="transitShi"></b></em>
+                    </span>
+                    <b class="num_unit">万</b>
+                    <span class="num_bg new_num_2">
+                        <i></i>
+                        <em><b id="transitGe">0000</b></em>
+                    </span>
+                </dt>
+            </dl>
+        </div>
+    </div>
+    <div class="echartsDiv">
+        <div id="zheT">
+            <h3 class="eTitle">1982-2020年产销量及工商税利走势</h3>
+            <div class="lineDiv" id="lineTrend"></div>
+        </div>
+        <div id="zhuT" style="display: none">
+            <h3 class="eTitle">2006-2020双十五品牌年度销量</h3>
+            <div class="lineDiv" id="barTrend"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/circle-progress.js"></script>
+<!--<script type="text/javascript" src="js/ajax-pushlet-client.js"></script>-->
+<script type="text/javascript" src="js/jquery.animateNumber.min.js"></script>
+<!--<script type="text/javascript" src="js/animateNumber.js"></script>-->
+<script type="text/javascript" src="js/mapGuiJi.js"></script>
+<script>
+	var timelyMap = 60000;    //地图切换时间
+	var timelyCenter = 30000; //中间刷新时间
+	var zxAnimationTime = 78000; //折线动一次的时间
+	var zxAnimationTimeYC = zxAnimationTime+10000; //等十秒
+	var zxAnimationSecond = 3;  //折线动画次数
+	var timelybottom = zxAnimationTimeYC * zxAnimationSecond; //下面折线切换时间
+	var pinpaiAnima = 4000;  //品牌年切换间隔时间
+	var timelybottomP = 120000; //下面品牌切换时间
+	var renderSpeed = 20000;   //蹦数秒数
+	var rightDate = 30000;    //日期刷新时间
+
+    $("#time").html('时间截止：'+current());
+    setInterval(function () {
+        $("#time").html('时间截止：'+current());
+    },rightDate);
+    //地图定时切换
+    timelyFunMap('true');   //true是工业，false是商业
+    //var myVarMap = setInterval("timelyFun2Map('false')",timelyMap);
+    var myVar2Map = ''
+    function timelyFunMap(tu) {
+        //clearInterval(myVarMap);
+        clearInterval(myVar2Map);
+        // 地图工业定时切换
+        mapTopInter(tu);
+        myVarMap = setInterval("timelyFun2Map('false')",timelyMap);
+    }
+    function timelyFun2Map(tu) {
+        clearInterval(myVarMap);
+        clearInterval(myVar2Map);
+        // 地图商业定时切换
+        mapTopInter(tu);
+        myVar2Map = setInterval("timelyFunMap('true')",timelyMap);
+    }
+    function mapTopInter(inter){
+        //var aaa = {"insmapdata":[{"typeName":"云南","mapLine":[{"mapsdata":{"name":"云南"},"mapdata":{"name":"北京","value":"1153"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"天津","value":"400"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"河北","value":"1548"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"山西","value":"1219"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"内蒙古","value":"153"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"黑龙江","value":"300"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"江苏","value":"730"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"浙江","value":"705"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"安徽","value":"496"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"福建","value":"414"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"江西","value":"4"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"河南","value":"180"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"湖北","value":"354"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"广东","value":"430"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"广西","value":"180"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"重庆","value":"70"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"云南","value":"772"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"新疆","value":"768"}}],"mapPoint":[{"name":"北京","value":"1153"},{"name":"天津","value":"400"},{"name":"河北","value":"1548"},{"name":"山西","value":"1219"},{"name":"内蒙古","value":"153"},{"name":"黑龙江","value":"300"},{"name":"江苏","value":"730"},{"name":"浙江","value":"705"},{"name":"安徽","value":"496"},{"name":"福建","value":"414"},{"name":"江西","value":"4"},{"name":"河南","value":"180"},{"name":"湖北","value":"354"},{"name":"广东","value":"430"},{"name":"广西","value":"180"},{"name":"重庆","value":"70"},{"name":"云南","value":"772"},{"name":"新疆","value":"768"}]},{"typeName":"上海","mapLine":[{"mapsdata":{"name":"上海"},"mapdata":{"name":"北京","value":"612"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"天津","value":"252"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"吉林","value":"217"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"黑龙江","value":"1242"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"上海","value":"285"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"福建","value":"1157"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"四川","value":"2128"}}],"mapPoint":[{"name":"北京","value":"612"},{"name":"天津","value":"252"},{"name":"吉林","value":"217"},{"name":"黑龙江","value":"1242"},{"name":"上海","value":"285"},{"name":"福建","value":"1157"},{"name":"四川","value":"2128"}]},{"typeName":"江苏","mapLine":[{"mapsdata":{"name":"江苏"},"mapdata":{"name":"北京","value":"368"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"天津","value":"189"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"河北","value":"481"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"山西","value":"344"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"内蒙古","value":"67"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"辽宁","value":"4"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"吉林","value":"684"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"江苏","value":"900"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"安徽","value":"253"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"福建","value":"128"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"江西","value":"10"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"山东","value":"523"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"河南","value":"80"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"广东","value":"56"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"四川","value":"407"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"陕西","value":"430"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"青海","value":"95"}}],"mapPoint":[{"name":"北京","value":"368"},{"name":"天津","value":"189"},{"name":"河北","value":"481"},{"name":"山西","value":"344"},{"name":"内蒙古","value":"67"},{"name":"辽宁","value":"4"},{"name":"吉林","value":"684"},{"name":"江苏","value":"900"},{"name":"安徽","value":"253"},{"name":"福建","value":"128"},{"name":"江西","value":"10"},{"name":"山东","value":"523"},{"name":"河南","value":"80"},{"name":"广东","value":"56"},{"name":"四川","value":"407"},{"name":"陕西","value":"430"},{"name":"青海","value":"95"}]},{"typeName":"北京(中烟实业)","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"天津","value":"248"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"河北","value":"176"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"山西","value":"150"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"内蒙古","value":"203"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"辽宁","value":"988"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"吉林","value":"1"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"黑龙江","value":"944"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"上海","value":"95"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"江苏","value":"30"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"山东","value":"318"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"湖南","value":"2"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"广东","value":"598"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"重庆","value":"94"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"陕西","value":"21"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"甘肃","value":"290"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"青海","value":"365"}}],"mapPoint":[{"name":"天津","value":"248"},{"name":"河北","value":"176"},{"name":"山西","value":"150"},{"name":"内蒙古","value":"203"},{"name":"辽宁","value":"988"},{"name":"吉林","value":"1"},{"name":"黑龙江","value":"944"},{"name":"上海","value":"95"},{"name":"江苏","value":"30"},{"name":"山东","value":"318"},{"name":"湖南","value":"2"},{"name":"广东","value":"598"},{"name":"重庆","value":"94"},{"name":"陕西","value":"21"},{"name":"甘肃","value":"290"},{"name":"青海","value":"365"}]},{"typeName":"浙江","mapLine":[{"mapsdata":{"name":"浙江"},"mapdata":{"name":"天津","value":"312"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"河北","value":"6"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"内蒙古","value":"60"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"辽宁","value":"221"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"吉林","value":"76"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"黑龙江","value":"125"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"浙江","value":"324"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"福建","value":"72"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"山东","value":"321"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"湖北","value":"163"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"湖南","value":"86"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"重庆","value":"163"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"四川","value":"203"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"贵州","value":"50"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"陕西","value":"247"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"甘肃","value":"103"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"新疆","value":"1074"}}],"mapPoint":[{"name":"天津","value":"312"},{"name":"河北","value":"6"},{"name":"内蒙古","value":"60"},{"name":"辽宁","value":"221"},{"name":"吉林","value":"76"},{"name":"黑龙江","value":"125"},{"name":"浙江","value":"324"},{"name":"福建","value":"72"},{"name":"山东","value":"321"},{"name":"湖北","value":"163"},{"name":"湖南","value":"86"},{"name":"重庆","value":"163"},{"name":"四川","value":"203"},{"name":"贵州","value":"50"},{"name":"陕西","value":"247"},{"name":"甘肃","value":"103"},{"name":"新疆","value":"1074"}]},{"typeName":"河南","mapLine":[{"mapsdata":{"name":"河南"},"mapdata":{"name":"山西","value":"180"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"内蒙古","value":"85"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"辽宁","value":"253"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"黑龙江","value":"110"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"江苏","value":"214"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"浙江","value":"23"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"福建","value":"241"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"江西","value":"46"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"山东","value":"100"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"河南","value":"2060"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"广东","value":"80"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"陕西","value":"130"}}],"mapPoint":[{"name":"山西","value":"180"},{"name":"内蒙古","value":"85"},{"name":"辽宁","value":"253"},{"name":"黑龙江","value":"110"},{"name":"江苏","value":"214"},{"name":"浙江","value":"23"},{"name":"福建","value":"241"},{"name":"江西","value":"46"},{"name":"山东","value":"100"},{"name":"河南","value":"2060"},{"name":"广东","value":"80"},{"name":"陕西","value":"130"}]},{"typeName":"湖北","mapLine":[{"mapsdata":{"name":"湖北"},"mapdata":{"name":"河北","value":"13"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"内蒙古","value":"50"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"辽宁","value":"758"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"江苏","value":"13"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"福建","value":"10"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"山东","value":"100"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"湖北","value":"1321"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"广东","value":"494"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"四川","value":"18"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"贵州","value":"30"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"陕西","value":"30"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"青海","value":"41"}}],"mapPoint":[{"name":"河北","value":"13"},{"name":"内蒙古","value":"50"},{"name":"辽宁","value":"758"},{"name":"江苏","value":"13"},{"name":"福建","value":"10"},{"name":"山东","value":"100"},{"name":"湖北","value":"1321"},{"name":"广东","value":"494"},{"name":"四川","value":"18"},{"name":"贵州","value":"30"},{"name":"陕西","value":"30"},{"name":"青海","value":"41"}]},{"typeName":"广西","mapLine":[{"mapsdata":{"name":"广西"},"mapdata":{"name":"广西","value":"2801"}}],"mapPoint":[{"name":"广西","value":"2801"}]},{"typeName":"湖南","mapLine":[{"mapsdata":{"name":"湖南"},"mapdata":{"name":"北京","value":"312"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"山西","value":"150"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"辽宁","value":"180"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"黑龙江","value":"60"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"江西","value":"115"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"山东","value":"150"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"河南","value":"300"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"湖南","value":"434"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"广东","value":"100"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"四川","value":"4"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"陕西","value":"482"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"宁夏","value":"300"}}],"mapPoint":[{"name":"北京","value":"312"},{"name":"山西","value":"150"},{"name":"辽宁","value":"180"},{"name":"黑龙江","value":"60"},{"name":"江西","value":"115"},{"name":"山东","value":"150"},{"name":"河南","value":"300"},{"name":"湖南","value":"434"},{"name":"广东","value":"100"},{"name":"四川","value":"4"},{"name":"陕西","value":"482"},{"name":"宁夏","value":"300"}]},{"typeName":"四川","mapLine":[{"mapsdata":{"name":"四川"},"mapdata":{"name":"山西","value":"97"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"内蒙古","value":"54"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"吉林","value":"173"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"黑龙江","value":"248"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"浙江","value":"38"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"湖北","value":"151"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"广东","value":"184"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"广西","value":"66"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"四川","value":"636"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"陕西","value":"190"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"甘肃","value":"2"}}],"mapPoint":[{"name":"山西","value":"97"},{"name":"内蒙古","value":"54"},{"name":"吉林","value":"173"},{"name":"黑龙江","value":"248"},{"name":"浙江","value":"38"},{"name":"湖北","value":"151"},{"name":"广东","value":"184"},{"name":"广西","value":"66"},{"name":"四川","value":"636"},{"name":"陕西","value":"190"},{"name":"甘肃","value":"2"}]},{"typeName":"贵州","mapLine":[{"mapsdata":{"name":"贵州"},"mapdata":{"name":"河北","value":"10"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"山西","value":"143"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"吉林","value":"100"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"浙江","value":"115"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"湖南","value":"166"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"广东","value":"431"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"贵州","value":"360"}}],"mapPoint":[{"name":"河北","value":"10"},{"name":"山西","value":"143"},{"name":"吉林","value":"100"},{"name":"浙江","value":"115"},{"name":"湖南","value":"166"},{"name":"广东","value":"431"},{"name":"贵州","value":"360"}]},{"typeName":"陕西","mapLine":[{"mapsdata":{"name":"陕西"},"mapdata":{"name":"江苏","value":"30"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"浙江","value":"17"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"湖南","value":"127"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"广东","value":"10"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"广西","value":"1"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"陕西","value":"680"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"青海","value":"4"}}],"mapPoint":[{"name":"江苏","value":"30"},{"name":"浙江","value":"17"},{"name":"湖南","value":"127"},{"name":"广东","value":"10"},{"name":"广西","value":"1"},{"name":"陕西","value":"680"},{"name":"青海","value":"4"}]},{"typeName":"广东","mapLine":[{"mapsdata":{"name":"广东"},"mapdata":{"name":"广东","value":"626"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"陕西","value":"90"}}],"mapPoint":[{"name":"广东","value":"626"},{"name":"陕西","value":"90"}]},{"typeName":"重庆","mapLine":[{"mapsdata":{"name":"重庆"},"mapdata":{"name":"山东","value":"91"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"河南","value":"30"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"重庆","value":"481"}}],"mapPoint":[{"name":"山东","value":"91"},{"name":"河南","value":"30"},{"name":"重庆","value":"481"}]},{"typeName":"安徽","mapLine":[{"mapsdata":{"name":"安徽"},"mapdata":{"name":"北京","value":"22"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"辽宁","value":"40"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"上海","value":"144"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"安徽","value":"80"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"重庆","value":"236"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"四川","value":"50"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"甘肃","value":"16"}}],"mapPoint":[{"name":"北京","value":"22"},{"name":"辽宁","value":"40"},{"name":"上海","value":"144"},{"name":"安徽","value":"80"},{"name":"重庆","value":"236"},{"name":"四川","value":"50"},{"name":"甘肃","value":"16"}]},{"typeName":"山东","mapLine":[{"mapsdata":{"name":"山东"},"mapdata":{"name":"河北","value":"5"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"吉林","value":"40"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"浙江","value":"180"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"山东","value":"182"}}],"mapPoint":[{"name":"河北","value":"5"},{"name":"吉林","value":"40"},{"name":"浙江","value":"180"},{"name":"山东","value":"182"}]},{"typeName":"福建","mapLine":[{"mapsdata":{"name":"福建"},"mapdata":{"name":"新疆","value":"200"}}],"mapPoint":[{"name":"新疆","value":"200"}]},{"typeName":"河北","mapLine":[{"mapsdata":{"name":"河北"},"mapdata":{"name":"河北","value":"120"}}],"mapPoint":[{"name":"河北","value":"120"}]},{"typeName":"江西","mapLine":[{"mapsdata":{"name":"江西"},"mapdata":{"name":"黑龙江","value":"13"}},{"mapsdata":{"name":"江西"},"mapdata":{"name":"江西","value":"96"}},{"mapsdata":{"name":"江西"},"mapdata":{"name":"山东","value":"3"}}],"mapPoint":[{"name":"黑龙江","value":"13"},{"name":"江西","value":"96"},{"name":"山东","value":"3"}]}]}
+        //var bbb = {"commapdata":[{"typeName":"浙江","mapLine":[{"mapsdata":{"name":"浙江"},"mapdata":{"name":"浙江","value":"3310"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"浙江","value":"700"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"浙江","value":"160"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"浙江","value":"150"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"浙江","value":"150"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"浙江","value":"120"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"浙江","value":"22"}}],"mapPoint":[{"name":"浙江","value":"3310"},{"name":"上海","value":"700"},{"name":"四川","value":"160"},{"name":"山东","value":"150"},{"name":"湖南","value":"150"},{"name":"重庆","value":"120"},{"name":"广东","value":"22"}]},{"typeName":"河南","mapLine":[{"mapsdata":{"name":"河南"},"mapdata":{"name":"河南","value":"2854"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"河南","value":"536"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"河南","value":"282"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"河南","value":"224"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"河南","value":"158"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"河南","value":"65"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"河南","value":"35"}},{"mapsdata":{"name":"福建"},"mapdata":{"name":"河南","value":"30"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"河南","value":"28"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"河南","value":"20"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"河南","value":"20"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"河南","value":"10"}}],"mapPoint":[{"name":"河南","value":"2854"},{"name":"江苏","value":"536"},{"name":"浙江","value":"282"},{"name":"四川","value":"224"},{"name":"湖北","value":"158"},{"name":"广东","value":"65"},{"name":"贵州","value":"35"},{"name":"福建","value":"30"},{"name":"山东","value":"28"},{"name":"湖南","value":"20"},{"name":"陕西","value":"20"},{"name":"重庆","value":"10"}]},{"typeName":"山东","mapLine":[{"mapsdata":{"name":"山东"},"mapdata":{"name":"山东","value":"1849"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"山东","value":"533"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"山东","value":"346"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"山东","value":"262"}},{"mapsdata":{"name":"广西"},"mapdata":{"name":"山东","value":"250"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"山东","value":"240"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"山东","value":"153"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"山东","value":"49"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"山东","value":"41"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"山东","value":"32"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"山东","value":"20"}}],"mapPoint":[{"name":"山东","value":"1849"},{"name":"河南","value":"533"},{"name":"贵州","value":"346"},{"name":"江苏","value":"262"},{"name":"广西","value":"250"},{"name":"湖北","value":"240"},{"name":"浙江","value":"153"},{"name":"四川","value":"49"},{"name":"湖南","value":"41"},{"name":"北京","value":"32"},{"name":"广东","value":"20"}]},{"typeName":"江苏","mapLine":[{"mapsdata":{"name":"江苏"},"mapdata":{"name":"江苏","value":"1727"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"江苏","value":"533"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"江苏","value":"204"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"江苏","value":"180"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"江苏","value":"95"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"江苏","value":"50"}},{"mapsdata":{"name":"福建"},"mapdata":{"name":"江苏","value":"45"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"江苏","value":"25"}}],"mapPoint":[{"name":"江苏","value":"1727"},{"name":"浙江","value":"533"},{"name":"云南","value":"204"},{"name":"湖南","value":"180"},{"name":"安徽","value":"95"},{"name":"北京","value":"50"},{"name":"福建","value":"45"},{"name":"重庆","value":"25"}]},{"typeName":"黑龙江","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"黑龙江","value":"2351"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"黑龙江","value":"270"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"黑龙江","value":"73"}},{"mapsdata":{"name":"广西"},"mapdata":{"name":"黑龙江","value":"11"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"黑龙江","value":"10"}}],"mapPoint":[{"name":"北京","value":"2351"},{"name":"湖北","value":"270"},{"name":"四川","value":"73"},{"name":"广西","value":"11"},{"name":"河南","value":"10"}]},{"typeName":"福建","mapLine":[{"mapsdata":{"name":"福建"},"mapdata":{"name":"福建","value":"2239"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"福建","value":"194"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"福建","value":"145"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"福建","value":"20"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"福建","value":"10"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"福建","value":"6"}}],"mapPoint":[{"name":"福建","value":"2239"},{"name":"云南","value":"194"},{"name":"浙江","value":"145"},{"name":"广东","value":"20"},{"name":"安徽","value":"10"},{"name":"四川","value":"6"}]},{"typeName":"云南","mapLine":[{"mapsdata":{"name":"云南"},"mapdata":{"name":"云南","value":"2267"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"云南","value":"55"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"云南","value":"9"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"云南","value":"3"}}],"mapPoint":[{"name":"云南","value":"2267"},{"name":"四川","value":"55"},{"name":"浙江","value":"9"},{"name":"江苏","value":"3"}]},{"typeName":"四川","mapLine":[{"mapsdata":{"name":"云南"},"mapdata":{"name":"四川","value":"756"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"四川","value":"744"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"四川","value":"320"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"四川","value":"160"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"四川","value":"95"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"四川","value":"30"}}],"mapPoint":[{"name":"云南","value":"756"},{"name":"四川","value":"744"},{"name":"上海","value":"320"},{"name":"重庆","value":"160"},{"name":"湖南","value":"95"},{"name":"河南","value":"30"}]},{"typeName":"广东","mapLine":[{"mapsdata":{"name":"广东"},"mapdata":{"name":"广东","value":"997"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"广东","value":"448"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"广东","value":"300"}},{"mapsdata":{"name":"福建"},"mapdata":{"name":"广东","value":"160"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"广东","value":"74"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"广东","value":"43"}}],"mapPoint":[{"name":"广东","value":"997"},{"name":"浙江","value":"448"},{"name":"上海","value":"300"},{"name":"福建","value":"160"},{"name":"云南","value":"74"},{"name":"陕西","value":"43"}]},{"typeName":"吉林","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"吉林","value":"1055"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"吉林","value":"290"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"吉林","value":"280"}},{"mapsdata":{"name":"江苏"},"mapdata":{"name":"吉林","value":"105"}}],"mapPoint":[{"name":"北京","value":"1055"},{"name":"湖北","value":"290"},{"name":"山东","value":"280"},{"name":"江苏","value":"105"}]},{"typeName":"广西","mapLine":[{"mapsdata":{"name":"广西"},"mapdata":{"name":"广西","value":"939"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"广西","value":"381"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"广西","value":"115"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"广西","value":"100"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"广西","value":"35"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"广西","value":"33"}}],"mapPoint":[{"name":"广西","value":"939"},{"name":"云南","value":"381"},{"name":"浙江","value":"115"},{"name":"山东","value":"100"},{"name":"湖北","value":"35"},{"name":"四川","value":"33"}]},{"typeName":"江西","mapLine":[{"mapsdata":{"name":"江西"},"mapdata":{"name":"江西","value":"965"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"江西","value":"394"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"江西","value":"65"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"江西","value":"60"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"江西","value":"50"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"江西","value":"40"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"江西","value":"4"}}],"mapPoint":[{"name":"江西","value":"965"},{"name":"浙江","value":"394"},{"name":"四川","value":"65"},{"name":"湖南","value":"60"},{"name":"北京","value":"50"},{"name":"陕西","value":"40"},{"name":"河南","value":"4"}]},{"typeName":"陕西","mapLine":[{"mapsdata":{"name":"陕西"},"mapdata":{"name":"陕西","value":"751"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"陕西","value":"216"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"陕西","value":"195"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"陕西","value":"99"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"陕西","value":"84"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"陕西","value":"35"}},{"mapsdata":{"name":"四川"},"mapdata":{"name":"陕西","value":"11"}}],"mapPoint":[{"name":"陕西","value":"751"},{"name":"北京","value":"216"},{"name":"湖北","value":"195"},{"name":"重庆","value":"99"},{"name":"浙江","value":"84"},{"name":"云南","value":"35"},{"name":"四川","value":"11"}]},{"typeName":"天津","mapLine":[{"mapsdata":{"name":"云南"},"mapdata":{"name":"天津","value":"600"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"天津","value":"252"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"天津","value":"200"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"天津","value":"110"}}],"mapPoint":[{"name":"云南","value":"600"},{"name":"上海","value":"252"},{"name":"北京","value":"200"},{"name":"山东","value":"110"}]},{"typeName":"河北","mapLine":[{"mapsdata":{"name":"河北"},"mapdata":{"name":"河北","value":"380"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"河北","value":"170"}},{"mapsdata":{"name":"福建"},"mapdata":{"name":"河北","value":"160"}},{"mapsdata":{"name":"上海"},"mapdata":{"name":"河北","value":"121"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"河北","value":"120"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"河北","value":"115"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"河北","value":"50"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"河北","value":"30"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"河北","value":"15"}}],"mapPoint":[{"name":"河北","value":"380"},{"name":"云南","value":"170"},{"name":"福建","value":"160"},{"name":"上海","value":"121"},{"name":"浙江","value":"120"},{"name":"湖北","value":"115"},{"name":"湖南","value":"50"},{"name":"山东","value":"30"},{"name":"北京","value":"15"}]},{"typeName":"湖南","mapLine":[{"mapsdata":{"name":"湖南"},"mapdata":{"name":"湖南","value":"644"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"湖南","value":"275"}},{"mapsdata":{"name":"广东"},"mapdata":{"name":"湖南","value":"115"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"湖南","value":"63"}}],"mapPoint":[{"name":"湖南","value":"644"},{"name":"浙江","value":"275"},{"name":"广东","value":"115"},{"name":"北京","value":"63"}]},{"typeName":"山西","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"山西","value":"313"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"山西","value":"232"}},{"mapsdata":{"name":"湖南"},"mapdata":{"name":"山西","value":"200"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"山西","value":"100"}},{"mapsdata":{"name":"贵州"},"mapdata":{"name":"山西","value":"70"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"山西","value":"50"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"山西","value":"10"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"山西","value":"2"}}],"mapPoint":[{"name":"北京","value":"313"},{"name":"陕西","value":"232"},{"name":"湖南","value":"200"},{"name":"浙江","value":"100"},{"name":"贵州","value":"70"},{"name":"山东","value":"50"},{"name":"湖北","value":"10"},{"name":"安徽","value":"2"}]},{"typeName":"辽宁","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"辽宁","value":"459"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"辽宁","value":"247"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"辽宁","value":"186"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"辽宁","value":"40"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"辽宁","value":"10"}}],"mapPoint":[{"name":"北京","value":"459"},{"name":"浙江","value":"247"},{"name":"云南","value":"186"},{"name":"湖北","value":"40"},{"name":"安徽","value":"10"}]},{"typeName":"内蒙古","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"内蒙古","value":"635"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"内蒙古","value":"155"}},{"mapsdata":{"name":"山东"},"mapdata":{"name":"内蒙古","value":"60"}},{"mapsdata":{"name":"河南"},"mapdata":{"name":"内蒙古","value":"26"}},{"mapsdata":{"name":"广西"},"mapdata":{"name":"内蒙古","value":"3"}}],"mapPoint":[{"name":"北京","value":"635"},{"name":"云南","value":"155"},{"name":"山东","value":"60"},{"name":"河南","value":"26"},{"name":"广西","value":"3"}]},{"typeName":"安徽","mapLine":[{"mapsdata":{"name":"安徽"},"mapdata":{"name":"安徽","value":"463"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"安徽","value":"217"}}],"mapPoint":[{"name":"安徽","value":"463"},{"name":"浙江","value":"217"}]},{"typeName":"新疆","mapLine":[{"mapsdata":{"name":"云南"},"mapdata":{"name":"新疆","value":"580"}}],"mapPoint":[{"name":"云南","value":"580"}]},{"typeName":"湖北","mapLine":[{"mapsdata":{"name":"四川"},"mapdata":{"name":"湖北","value":"178"}},{"mapsdata":{"name":"湖北"},"mapdata":{"name":"湖北","value":"168"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"湖北","value":"125"}},{"mapsdata":{"name":"北京"},"mapdata":{"name":"湖北","value":"61"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"湖北","value":"47"}}],"mapPoint":[{"name":"四川","value":"178"},{"name":"湖北","value":"168"},{"name":"浙江","value":"125"},{"name":"北京","value":"61"},{"name":"云南","value":"47"}]},{"typeName":"贵州","mapLine":[{"mapsdata":{"name":"贵州"},"mapdata":{"name":"贵州","value":"292"}},{"mapsdata":{"name":"云南"},"mapdata":{"name":"贵州","value":"238"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"贵州","value":"19"}}],"mapPoint":[{"name":"贵州","value":"292"},{"name":"云南","value":"238"},{"name":"安徽","value":"19"}]},{"typeName":"海南","mapLine":[{"mapsdata":{"name":"广东"},"mapdata":{"name":"海南","value":"252"}},{"mapsdata":{"name":"安徽"},"mapdata":{"name":"海南","value":"109"}}],"mapPoint":[{"name":"广东","value":"252"},{"name":"安徽","value":"109"}]},{"typeName":"甘肃","mapLine":[{"mapsdata":{"name":"北京"},"mapdata":{"name":"甘肃","value":"270"}},{"mapsdata":{"name":"重庆"},"mapdata":{"name":"甘肃","value":"30"}},{"mapsdata":{"name":"陕西"},"mapdata":{"name":"甘肃","value":"23"}},{"mapsdata":{"name":"浙江"},"mapdata":{"name":"甘肃","value":"19"}}],"mapPoint":[{"name":"北京","value":"270"},{"name":"重庆","value":"30"},{"name":"陕西","value":"23"},{"name":"浙江","value":"19"}]},{"typeName":"重庆","mapLine":[{"mapsdata":{"name":"广西"},"mapdata":{"name":"重庆","value":"120"}},{"mapsdata":{"name":"福建"},"mapdata":{"name":"重庆","value":"18"}}],"mapPoint":[{"name":"广西","value":"120"},{"name":"福建","value":"18"}]},{"typeName":"宁夏","mapLine":[{"mapsdata":{"name":"四川"},"mapdata":{"name":"宁夏","value":"8"}}],"mapPoint":[{"name":"四川","value":"8"}]},{"typeName":"1","mapLine":[],"mapPoint":[]}]}
+        //if(inter == 'true'){
+        //    insMapData([aaa.insmapdata]); //工业
+        //}else if(inter == 'false'){
+        //    comMapData(bbb.commapdata); //商业
+        //}
+        //return
+        $.post('/TIDC_PC/WelcomeServlet', {
+                flag : "WelcomeDeal",
+                ajxa : "Y",
+        },function(data){
+            welcomMapDataVO = $.parseJSON(data);
+            //mapData = welcomMapDataVO.insmapdata;
+            if(inter == 'true'){
+                $("#mainMap").css("opacity","1");
+                $("#mainMap2").css('opacity','0');
+                $(".gong_tab").addClass('tab_bg');
+                $(".gong_tab").children('img').attr('src','image/gong_2.png');
+                $(".shang_tab").removeClass('tab_bg');
+                $(".shang_tab").children('img').attr('src','image/shang_1.png');
+                insMapData(welcomMapDataVO.insmapdata); //工业
+            }else if(inter == 'false'){
+                $("#mainMap").css('opacity','0');
+                $("#mainMap2").css('opacity','1');
+                $(".gong_tab").removeClass('tab_bg');
+                $(".gong_tab").children('img').attr('src','image/gong_1.png');
+                $(".shang_tab").addClass('tab_bg');
+                $(".shang_tab").children('img').attr('src','image/shang_2.png');
+                comMapData(welcomMapDataVO.commapdata); //商业
+            }
+        });
+    }
+
+    //对pushlet的初始化，触发web.xml中的servlet。
+    /*PL._init();
+    //这里的监听的主题，必须在sources.properties中配置的对象中声明这个主题。
+    //sources.properties配置着事件源（EventSources），在服务器启动时会自动激活。
+    //可以通过服务器的启动记录查看得到。可以将这个文件放到WEB-INF目录下面或者classess目录下面都可以。
+    PL.joinListen('/linjiqin/hw');
+    function onData(event) {
+        alert(event.get("hw"));
+    }*/
+    //新版进度条初始
+    var myChartJDT1 = '',myChartJDT2 = '';
+    var optionY1 = '',optionY2 = '';
+    let angle = 0;//角度，用来做简单的动画效果的
+    var jdtSwitch = false;
+    //中间蹦数
+    setInterval(function oneLoad() {
+        $.post('/TIDC_PC/WelcomeServlet', {
+            flag : "WelcomeJumpNumDeal",
+            ajxa : "Y",
+        },function(data){
+            welcomJum = $.parseJSON(data);
+            cData = welcomJum.jumpNum;
+            //create_circle(1,(cData.INS_JD)/100);
+            //create_circle(2,(cData.COM_JD)/100);
+            jdtSwitch = true;
+            if(Number(cData.INS_JD) >100){
+                kejiJdt1(cData.INS_JD,100,1); //a-没超过一百的，超过一百传b-100
+            }else{
+                kejiJdt1(cData.INS_JD,cData.INS_JD,1); //a-没超过一百的，超过一百传b-100
+            }
+            if(Number(cData.COM_JD) >100){
+                kejiJdt2(cData.COM_JD,100,2);
+            }else{
+                kejiJdt2(cData.COM_JD,cData.COM_JD,2);
+            }
+            //蹦数
+            $('#insSingle').html(cData.INS_DX);
+            show_num2("insProdDayShi",tenThNumber(cData.INS_PROD_QTY));show_num2("insProdDayGe",tenThNumber(cData.INS_PROD_QTY));
+            show_num2("insProdMonthShi",tenThNumber(cData.INS_PROD_QTY_MONTH));show_num2("insProdMonthGe",tenThNumber(cData.INS_PROD_QTY_MONTH));
+            show_num2("insProdYearShi",tenThNumber(cData.INS_PROD_QTY_YEAR));show_num2("insProdYearGe",tenThNumber(cData.INS_PROD_QTY_YEAR));
+            show_num2("insSalDayShi",tenThNumber(cData.INS_SAL_QTY));show_num2("insSalDayGe",tenThNumber(cData.INS_SAL_QTY));
+            show_num2("insSalMonthShi",tenThNumber(cData.INS_SAL_QTY_MONTH));show_num2("insSalMonthGe",tenThNumber(cData.INS_SAL_QTY_MONTH));
+            show_num2("insSalYearShi",tenThNumber(cData.INS_SAL_QTY_YEAR));show_num2("insSalYearGe",tenThNumber(cData.INS_SAL_QTY_YEAR));
+            show_num2("insMoneyDayShi",tenThNumber(cData.INS_SALSUM_QTY));show_num2("insMoneyDayGe",tenThNumber(cData.INS_SALSUM_QTY));
+            show_num2("insMoneyMonthShi",tenThNumber(cData.INS_SALSUM_QTY_MONTH));show_num2("insMoneyMonthGe",tenThNumber(cData.INS_SALSUM_QTY_MONTH));
+            show_num2("insMoneyYearShi",tenThNumber(cData.INS_SALSUM_QTY_YEAR));show_num2("insMoneyYearGe",tenThNumber(cData.INS_SALSUM_QTY_YEAR));
+            $('#comSingle').html(cData.COM_DX);
+            show_num2("comProdDayShi", tenThNumber(cData.COM_SAL_QTY)); show_num2("comProdDayGe", tenThNumber(cData.COM_SAL_QTY));
+            show_num2("comProdMonthShi", tenThNumber(cData.COM_SAL_QTY_MONTH)); show_num2("comProdMonthGe", tenThNumber(cData.COM_SAL_QTY_MONTH));
+            show_num2("comProdYearShi", tenThNumber(cData.COM_SAL_QTY_YEAR)); show_num2("comProdYearGe", tenThNumber(cData.COM_SAL_QTY_YEAR));
+            show_num2("comSalDayShi", tenThNumber(cData.COM_BUY_QTY)); show_num2("comSalDayGe", tenThNumber(cData.COM_BUY_QTY));
+            show_num2("comSalMonthShi", tenThNumber(cData.COM_BUY_QTY_MONTH)); show_num2("comSalMonthGe", tenThNumber(cData.COM_BUY_QTY_MONTH));
+            show_num2("comSalYearShi", tenThNumber(cData.COM_BUY_QTY_YEAR)); show_num2("comSalYearGe", tenThNumber(cData.COM_BUY_QTY_YEAR));
+            show_num2("comMoneyDayShi", tenThNumber(cData.COM_SALSUM_QTY)); show_num2("comMoneyDayGe", tenThNumber(cData.COM_SALSUM_QTY));
+            show_num2("comMoneyMonthShi", tenThNumber(cData.COM_SALSUM_QTY_MONTH)); show_num2("comMoneyMonthGe", tenThNumber(cData.COM_SALSUM_QTY_MONTH));
+            show_num2("comMoneyYearShi", tenThNumber(cData.COM_SALSUM_QTY_YEAR)); show_num2("comMoneyYearGe", tenThNumber(cData.COM_SALSUM_QTY_YEAR));
+            show_num2("insStkShi", tenThNumber(cData.INS_STK_QTY) | 0); show_num2("insStkGe", tenThNumber(cData.INS_STK_QTY) | 0);
+            show_num2("comStkShi", tenThNumber(cData.COM_STK_QTY) | 0); show_num2("comStkGe", tenThNumber(cData.COM_STK_QTY) | 0);
+            show_num2("transitShi", tenThNumber(cData.TRANSIT_QTY)); show_num2("transitGe", tenThNumber(cData.TRANSIT_QTY));
+        });
+        return oneLoad;}(), timelyCenter);
+
+    function show_num2(target, n){
+        var objMain = $("#" + target);
+        var old = parseInt(objMain.html()=='' ? 0 : objMain.html());
+        if(old == 0){
+            objMain.html(n);
+            return;
+        }
+        if (old == n) {
+            return;
+        } else {
+            $("#" + target).css("color","#89F16B");
+        }
+        objMain.prop('number', old).animateNumber({
+            number: n
+        },renderSpeed, function() {
+            $("#" + target).css("color","#C2F5FF");
+            /*if(n == '0' || n == 0){
+            	console.log('ssss')
+            	console.log(target.indexOf("Ge"))
+                if(target.indexOf("Ge") != -1){
+                    $("#" + target).html('0000');
+                }
+            }*/
+        });
+    }
+    //圆形进度条
+    function create_circle(num,val_num){
+        $('#circle_step'+num).circleProgress({
+            value: val_num,
+            size: 202,
+            startAngle:4.7,
+            lineCap:'round',//圆弧的线头样式："butt"、"round"和"square"。默认值为"butt"
+            thickness:20,
+            emptyFill:'#2B9EFF',
+            fill: {
+                gradient: ["#00F67A", "#b7e6bb"]
+            }
+        }).on('circle-animation-progress', function(event, progress,stepValue) {
+            $(this).find('strong').html(String((stepValue*100).toFixed(0)) + '<em style="font-size: 30px;">%</em>');
+        });
+    }
+    //进度图2
+    function kejiJdt1(value,hundredValue,num) {
+        myChartJDT1 = echarts.init(document.getElementById("circle_step"+num));
+        optionY1 = jdtOption(value,hundredValue)
+        myChartJDT1.setOption(optionY1);
+    }
+    function kejiJdt2(value,hundredValue,num) {
+        myChartJDT2 = echarts.init(document.getElementById("circle_step"+num));
+        optionY2 = jdtOption(value,hundredValue)
+        myChartJDT2.setOption(optionY2);
+    }
+    function jdtOption(value,hundredValue) {
+        var optionY = {
+            //backgroundColor:"rgba(0, 50, 133, 0.7)",
+            title: {
+                text: '{a|'+ value +'}{c|%}',
+                x: 'center',
+                y: '50%',
+                textStyle: {
+                    rich:{
+                        a: {
+                            fontSize: 40,
+                            color: '#C2F5FF'
+                        },
+
+                        c: {
+                            fontSize: 26,
+                            color: '#C2F5FF',
+                            // padding: [5,0]
+                        }
+                    }
+                }
+            },
+            series: [ {
+                name: "ring5",
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    return {
+                        type: 'arc',
+                        shape: {
+                            cx: api.getWidth() / 2,
+                            cy: api.getHeight() / 2,
+                            r: Math.min(api.getWidth(), api.getHeight()) / 2 * 0.6,
+                            startAngle: (0+angle) * Math.PI / 180,
+                            endAngle: (90+angle) * Math.PI / 180
+                        },
+                        style: {
+                            stroke: "#0CD3DB",
+                            fill: "transparent",
+                            lineWidth: 1.5
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: "ring5",
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    return {
+                        type: 'arc',
+                        shape: {
+                            cx: api.getWidth() / 2,
+                            cy: api.getHeight() / 2,
+                            r: Math.min(api.getWidth(), api.getHeight()) / 2 * 0.6,
+                            startAngle: (180+angle) * Math.PI / 180,
+                            endAngle: (270+angle) * Math.PI / 180
+                        },
+                        style: {
+                            stroke: "#0CD3DB",
+                            fill: "transparent",
+                            lineWidth: 1.5
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: "ring5",
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    return {
+                        type: 'arc',
+                        shape: {
+                            cx: api.getWidth() / 2,
+                            cy: api.getHeight() / 2,
+                            r: Math.min(api.getWidth(), api.getHeight()) / 2 * 0.65,
+                            startAngle: (270+-angle) * Math.PI / 180,
+                            endAngle: (40+-angle) * Math.PI / 180
+                        },
+                        style: {
+                            stroke: "#0CD3DB",
+                            fill: "transparent",
+                            lineWidth: 1.5
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: "ring5",
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    return {
+                        type: 'arc',
+                        shape: {
+                            cx: api.getWidth() / 2,
+                            cy: api.getHeight() / 2,
+                            r: Math.min(api.getWidth(), api.getHeight()) / 2 * 0.65,
+                            startAngle: (90+-angle) * Math.PI / 180,
+                            endAngle: (220+-angle) * Math.PI / 180
+                        },
+                        style: {
+                            stroke: "#0CD3DB",
+                            fill: "transparent",
+                            lineWidth: 1.5
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: "ring5",
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    let x0 = api.getWidth() / 2;
+                    let y0 = api.getHeight() / 2;
+                    let r = Math.min(api.getWidth(), api.getHeight()) / 2 * 0.65;
+                    let point = getCirlPoint(x0, y0, r, (90+-angle))
+                    return {
+                        type: 'circle',
+                        shape: {
+                            cx: point.x,
+                            cy: point.y,
+                            r: 4
+                        },
+                        style: {
+                            stroke: "#0CD3DB",//粉
+                            fill: "#0CD3DB"
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: "ring5",  //绿点
+                type: 'custom',
+                coordinateSystem: "none",
+                renderItem: function(params, api) {
+                    let x0 = api.getWidth() / 2;
+                    let y0 = api.getHeight() / 2;
+                    let r = Math.min(api.getWidth(), api.getHeight()) / 2 * 0.65;
+                    let point = getCirlPoint(x0, y0, r, (270+-angle))
+                    return {
+                        type: 'circle',
+                        shape: {
+                            cx: point.x,
+                            cy: point.y,
+                            r: 4
+                        },
+                        style: {
+                            stroke: "#0CD3DB",      //绿
+                            fill: "#0CD3DB"
+                        },
+                        silent: true
+                    };
+                },
+                data: [0]
+            }, {
+                name: '',
+                type: 'pie',
+                radius: ['58%', '45%'],
+                silent: true,
+                clockwise: true,
+                startAngle: 90,
+                z: 0,
+                zlevel: 0,
+                label: {
+                    normal: {
+                        position: "center",
+
+                    }
+                },
+                data: [{
+                    value: hundredValue,
+                    name: "",
+                    itemStyle: {
+                        normal: {
+                            color: { // 完成的圆环的颜色
+                                colorStops: [{
+                                    offset: 0,
+                                    color: '#4FADFD' // 0% 处的颜色
+                                }, {
+                                    offset: 1,
+                                    color: '#28E8FA' // 100% 处的颜色
+                                }]
+                            },
+                        }
+                    }
+                },
+                    {
+                        value: 100-hundredValue,
+                        name: "",
+                        label: {
+                            normal: {
+                                show: false
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: "#173164"
+                            }
+                        }
+                    }
+                ]
+            },
+
+                {
+                    name: "",
+                    type: "gauge",
+                    radius: "58%",
+                    center: ['50%', '50%'],
+                    startAngle: 0,
+                    endAngle: 359.9,
+                    splitNumber: 12,
+                    hoverAnimation: true,
+                    axisTick: {
+                        show: false
+                    },
+                    splitLine: {
+                        length: 60,
+                        lineStyle: {
+                            width: 5,
+                            color: "#002F7C"
+                        }
+                    },
+                    axisLabel: {
+                        show: false
+                    },
+                    pointer: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            opacity: 0
+                        }
+                    },
+                    detail: {
+                        show: false
+                    },
+                    data: [{
+                        value: 0,
+                        name: ""
+                    }]
+                },
+
+            ]
+        };
+        return optionY;
+    }
+    //获取圆上面某点的坐标(x0,y0表示坐标，r半径，angle角度)
+    function getCirlPoint(x0, y0, r, angle) {
+        let x1 = x0 + r * Math.cos(angle * Math.PI / 180)
+        let y1 = y0 + r * Math.sin(angle * Math.PI / 180)
+        return {
+            x: x1,
+            y: y1
+        }
+    }
+    function draw(){
+        angle = angle+3
+        myChartJDT1.setOption(optionY1, true);
+        myChartJDT2.setOption(optionY2, true);
+        //window.requestAnimationFrame(draw);
+    }
+    setInterval(function() {
+        //用setInterval做动画感觉有问题
+        if(jdtSwitch){
+            draw();
+        }
+    }, 100);
+
+    //折线图和柱状图切换
+    var barColor = ['#F3896D', '#F3896D', '#F3896D', '#F3896D', '#E9D391', '#7BAAFF',
+        '#E9D391', '#E9D391', '#00C6FF', '#00C6FF', '#7BAAFF', '#7BAAFF',
+        '#E9D391', '#E9D391', '#9EE392', '#9EE392', '#9EE392', '#9EE392','#9EE392', '#9EE392', '#9EE392'
+    ];
+    timelyFun('one');
+    //var myVar = setInterval("timelyFun2()",timelybottom);
+    var myVar2 = ''
+    function timelyFun(tu) {
+        //clearInterval(myVar);
+        clearInterval(myVar2);
+        $("#zheT").show();
+        $("#zhuT").hide();
+        zzTu(tu);
+        ////折线图定时切换
+        myVar = setInterval("timelyFun2('two')",timelybottom);
+    }
+    function timelyFun2(tu) {
+        clearInterval(myVar);
+        clearInterval(myVar2);
+        zzTu(tu);
+        //柱状图定时切换
+        myVar2 = setInterval("timelyFun('one')",timelybottomP);
+    }
+    //折线图和柱状图
+    //setInterval(function oneLoad() {
+    function zzTu(other){
+         $.ajax({
+             method: 'post',
+             url: '/TIDC_PC/TjfxServlet',
+             // url: 'json.json',
+             data:{
+                 flag : "bussiness.TjfxAllDateCache",
+                 ajxa : "Y",
+             },
+             //timeout:30000,
+             dataType : 'json',
+             success: function(res){
+                 //折线图
+                 var obj = res.taxLine; //折线图json
+                 var dataZhe = dealDataZhe(obj.slList);
+                 if(other == 'one'){
+                     for (var d = 0; d < zxAnimationSecond; d++) {
+                         (function (a) {
+                             setTimeout(function () {
+                                 zhexian(dataZhe,obj.taxMaxMin);
+                             }, zxAnimationTimeYC * a);
+                         })(d)}
+                 }
+
+                 //柱状图
+                 var obj2 = res.popSca; //柱状图json
+                 var ppData = obj2.ppList;
+                 var yearList = obj2.yearList;
+                 //先用假数据
+                 //ppData = [{"date":"2011","code":"185","name":"白沙","value":"304.26"},{"date":"2011","code":"414","name":"贵烟","value":"40.51"},{"date":"2011","code":"494","name":"红双喜","value":"92.92"},{"date":"2011","code":"496","name":"红塔山","value":"310.01"},{"date":"2011","code":"535","name":"黄鹤楼","value":"98.63"},{"date":"2011","code":"538","name":"黄金叶","value":"85.19"},{"date":"2011","code":"539","name":"黄山","value":"199.53"},{"date":"2011","code":"576","name":"娇子","value":"72.35"},{"date":"2011","code":"715","name":"利群","value":"141.9"},{"date":"2011","code":"794","name":"南京","value":"120.98"},{"date":"2011","code":"815","name":"七匹狼","value":"165.02"},{"date":"2011","code":"899","name":"双喜","value":"304.03"},{"date":"2011","code":"911","name":"苏烟","value":"40.43"},{"date":"2011","code":"916","name":"泰山","value":"111.77"},{"date":"2011","code":"1118","name":"玉溪","value":"95.43"},{"date":"2011","code":"1145","name":"云烟","value":"229.45"},{"date":"2011","code":"1157","name":"中华","value":"93.63"},{"date":"2011","code":"1189","name":"芙蓉王","value":"110.5"},{"date":"2012","code":"185","name":"白沙","value":"304.35"},{"date":"2012","code":"414","name":"贵烟","value":"53.81"},{"date":"2012","code":"494","name":"红双喜","value":"97.39"},{"date":"2012","code":"496","name":"红塔山","value":"305.37"},{"date":"2012","code":"535","name":"黄鹤楼","value":"136.66"},{"date":"2012","code":"538","name":"黄金叶","value":"147.51"},{"date":"2012","code":"539","name":"黄山","value":"211.88"},{"date":"2012","code":"576","name":"娇子","value":"78.28"},{"date":"2012","code":"715","name":"利群","value":"174.29"},{"date":"2012","code":"794","name":"南京","value":"139.05"},{"date":"2012","code":"815","name":"七匹狼","value":"186.56"},{"date":"2012","code":"899","name":"双喜","value":"318.81"},{"date":"2012","code":"911","name":"苏烟","value":"51.82"},{"date":"2012","code":"916","name":"泰山","value":"152.28"},{"date":"2012","code":"1118","name":"玉溪","value":"123.44"},{"date":"2012","code":"1145","name":"云烟","value":"296.68"},{"date":"2012","code":"1157","name":"中华","value":"110.7"},{"date":"2012","code":"1189","name":"芙蓉王","value":"135.46"},{"date":"2013","code":"185","name":"白沙","value":"294.74"},{"date":"2013","code":"414","name":"贵烟","value":"59.1"},{"date":"2013","code":"494","name":"红双喜","value":"94.37"},{"date":"2013","code":"496","name":"红塔山","value":"298.28"},{"date":"2013","code":"535","name":"黄鹤楼","value":"156.51"},{"date":"2013","code":"538","name":"黄金叶","value":"192.37"},{"date":"2013","code":"539","name":"黄山","value":"222.33"},{"date":"2013","code":"576","name":"娇子","value":"84.36"},{"date":"2013","code":"715","name":"利群","value":"203.71"},{"date":"2013","code":"794","name":"南京","value":"150.2"},{"date":"2013","code":"815","name":"七匹狼","value":"202.07"},{"date":"2013","code":"899","name":"双喜","value":"329.64"},{"date":"2013",code:"911","name":"苏烟","value":"58.02"},{"date":"2013",code:"916","name":"泰山","value":"167.13"},{"date":"2013",code:"1118","name":"玉溪","value":"145.19"},{"date":"2013",code:"1145","name":"云烟","value":"340.75"},{"date":"2013",code:"1157","name":"中华","value":"123.34"},{"date":"2013",code:"1189","name":"芙蓉王","value":"157.54"},{"date":"2014",code:"185","name":"白沙","value":"293.39"},{"date":"2014",code:"414","name":"贵烟","value":"68.42"},{"date":"2014",code:"494","name":"红双喜","value":"90.75"},{"date":"2014",code:"496","name":"红塔山","value":"301.23"},{"date":"2014",code:"535","name":"黄鹤楼","value":"182.63"},{"date":"2014",code:"538","name":"黄金叶","value":"198.92"},{"date":"2014",code:"539","name":"黄山","value":"224.92"},{"date":"2014",code:"576","name":"娇子","value":"82.55"},{"date":"2014",code:"715","name":"利群","value":"245.47"},{"date":"2014",code:"794","name":"南京","value":"169.21"},{"date":"2014",code:"815","name":"七匹狼","value":"191.46"},{"date":"2014",code:"899","name":"双喜","value":"335.58"},{"date":"2014",code:"911","name":"苏烟","value":"65.42"},{"date":"2014",code:"916","name":"泰山","value":"146.18"},{"date":"2014",code:"1118","name":"玉溪","value":"167.07"},{"date":"2014",code:"1145","name":"云烟","value":"376.36"},{"date":"2014",code:"1157","name":"中华","value":"142.83"},{"date":"2014",code:"1189","name":"芙蓉王","value":"186.86"},{"date":"2015",code:"185","name":"白沙","value":"283.34"},{"date":"2015",code:"414","name":"贵烟","value":"76.71"},{"date":"2015",code:"494","name":"红双喜","value":"81.21"},{"date":"2015",code:"496","name":"红塔山","value":"292.94"},{"date":"2015",code:"535","name":"黄鹤楼","value":"185.45"},{"date":"2015",code:"538","name":"黄金叶","value":"193.58"},{"date":"2015",code:"539","name":"黄山","value":"198.15"},{"date":"2015",code:"576","name":"娇子","value":"65.66"},{"date":"2015",code:"715","name":"利群","value":"270.99"},{"date":"2015",code:"794","name":"南京","value":"191.69"},{"date":"2015",code:"815","name":"七匹狼","value":"175.28"},{"date":"2015",code:"899","name":"双喜","value":"329.87"},{"date":"2015",code:"911","name":"苏烟","value":"63.04"},{"date":"2015",code:"916","name":"泰山","value":"146"},{"date":"2015",code:"1118","name":"玉溪","value":"160.86"},{"date":"2015",code:"1145","name":"云烟","value":"385.46"},{"date":"2015",code:"1157","name":"中华","value":"153.61"},{"date":"2015",code:"1189","name":"芙蓉王","value":"198.27"},{"date":"2016",code:"185","name":"白沙","value":"254.18"},{"date":"2016",code:"414","name":"贵烟","value":"75.08"},{"date":"2016",code:"494","name":"红双喜","value":"75.37"},{"date":"2016",code:"496","name":"红塔山","value":"273.23"},{"date":"2016",code:"535","name":"黄鹤楼","value":"175.72"},{"date":"2016",code:"538","name":"黄金叶","value":"173.48"},{"date":"2016",code:"539","name":"黄山","value":"170.38"},{"date":"2016",code:"576","name":"娇子","value":"69.6"},{"date":"2016",code:"715","name":"利群","value":"283.35"},{"date":"2016",code:"794","name":"南京","value":"208.58"},{"date":"2016",code:"815","name":"七匹狼","value":"154.28"},{"date":"2016",code:"899","name":"双喜","value":"311.46"},{"date":"2016",code:"911","name":"苏烟","value":"55.7"},{"date":"2016",code:"916","name":"泰山","value":"139.17"},{"date":"2016",code:"1118","name":"玉溪","value":"133.12"},{"date":"2016",code:"1145","name":"云烟","value":"362.53"},{"date":"2016",code:"1157","name":"中华","value":"135.08"},{"date":"2016",code:"1189","name":"芙蓉王","value":"188.85"},{"date":"2017",code:"185","name":"白沙","value":"137.05"},{"date":"2017",code:"414","name":"贵烟","value":"48.68"},{"date":"2017",code:"494","name":"红双喜","value":"38.54"},{"date":"2017",code:"496","name":"红塔山","value":"147.82"},{"date":"2017",code:"535","name":"黄鹤楼","value":"116.07"},{"date":"2017",code:"538","name":"黄金叶","value":"105.48"},{"date":"2017",code:"539","name":"黄山","value":"99.92"},{"date":"2017",code:"576","name":"娇子","value":"39.64"},{"date":"2017",code:"715","name":"利群","value":"179.21"},{"date":"2017",code:"794","name":"南京","value":"127.91"},{"date":"2017",code:"815","name":"七匹狼","value":"83.83"},{"date":"2017",code:"899","name":"双喜","value":"174.01"},{"date":"2017",code:"911","name":"苏烟","value":"34.72"},{"date":"2017",code:"916","name":"泰山","value":"84.24"},{"date":"2017",code:"1118","name":"玉溪","value":"79.36"},{"date":"2017",code:"1145","name":"云烟","value":"205.08"},{"date":"2017",code:"1157","name":"中华","value":"85"},{"date":"2017",code:"1189","name":"芙蓉王","value":"111.81"}];
+                 //yearList = [2011,2012,2013,2014,2015,2016,2017];
+                 var dataZhu = dealDataZhu(ppData);
+                 var dataZhuName = dataN(dataZhu);
+                 var dataZhuData = dataD(dataZhu);
+                 //先用假数据
+                 if(other == 'two'){
+                     echarts.init(document.getElementById("barTrend")).dispose();
+                     $("#zheT").hide();
+                     $("#zhuT").show();
+                     zhutu(dataZhuName,dataZhuData,yearList)
+                 }
+             }
+         });
+    }
+    //    return oneLoad;}(), timelybottom);
+
+    //解析折线图json结构
+    function dealDataZhe(obj){
+        var data = {
+            time:[""],
+            cl:[""],
+            xl:[""],
+            sl:[""]
+        }
+        for(var a = 0; a < obj.length; a++){
+            data.time[a] = obj[a].date;
+            data.cl[a] = obj[a].cl;
+            data.xl[a] = obj[a].xl;
+            data.sl[a] = obj[a].sl;
+        }
+        return data;
+    }
+    function dealDataZhu(data) {
+        var obj = {};
+        var arr1 = [];
+        for(var a = 0; a < data.length; a++){
+            var year = data[a].date;
+            obj[year] = [];
+        }
+        for(var b = 0; b < data.length; b++){
+            var year = data[b].date*1;
+            var name = data[b].name;
+            //var popCode = data[b].code;
+            var value = data[b].value*1;
+            if(name.length == 2){
+                name = name.split("")[0]+'   '+name.split("")[1];
+            }
+            arr1 = [];
+            arr1.push(name);
+            arr1.push(value);
+            arr1.push(year);
+            //arr1.push(popCode);
+            obj[year].push(arr1)
+        }
+        return obj
+    }
+    function dataN(obj) {
+        var jdData = [];
+        //var jdNumber = [];
+        for (x in obj){
+            var jdDataName = [];
+            var jdDataValue = [];
+            for(var j = 0;j<obj[x].length;j++){
+                jdDataName.push(obj[x][j][0])
+                //jdDataValue.push(obj[x][j][1])
+            }
+            jdData.push(jdDataName)
+            //jdNumber.push(jdDataValue)
+        }
+        return jdData
+    }
+    function dataD(obj) {
+        //var jdData = [];
+        var jdNumber = [];
+        for (x in obj){
+            var jdDataName = [];
+            var jdDataValue = [];
+            for(var j = 0;j<obj[x].length;j++){
+                //jdDataName.push(obj[x][j][0])
+                jdDataValue.push(obj[x][j][1])
+            }
+            //jdData.push(jdDataName)
+            jdNumber.push(jdDataValue)
+        }
+        return jdNumber
+    }
+    //折线图
+    function zhexian(obj,maxMinObj){
+        leftMax = maxMinObj.cxMax;
+        leftMin = maxMinObj.cxMin;
+        rightMax = maxMinObj.slMax;
+        rightMin = maxMinObj.slMin;
+        var data = obj;
+        document.getElementById('lineTrend').style.width=$(".echartsDiv").css('width');
+        var myChartE = echarts.init(document.getElementById("lineTrend"));
+        optionE = {
+            animationDuration: zxAnimationTime,
+            color:['#FF8840','#F4E95B','#3AFFFF'],
+            title: {
+                text: ''
+            },
+            /*tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },*/
+            legend: {
+                icon:'rect',
+                left: 44,
+                top: 150,
+                data: ['税利', '产量', '销量'],
+                textStyle: {
+                    fontSize: 26,
+                    color: '#91CAFF',
+                    padding: [0, 0, 0, 5]
+                }
+            },
+            grid: {
+                top: '22%',
+                left: '4%',
+                right: '4%',
+                bottom: '5%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    //data: ['1982','1984','1986','1988','1990','1992','1994','1996','1998','2000',
+                    //    '2002','2004','2006','2008','2010','2012','2014','2016','2018','2020'],
+                    data:data.time,
+                    axisLine:{
+                        lineStyle:{
+                            color:'#004AAD'
+                        }
+                    },
+                    axisLabel: {
+                        show: true,
+                        rotate: 40,
+                        margin: 25,
+                        textStyle: {
+                            fontSize:'26',
+                            color: '#fff'
+                        }
+                    },
+                    axisTick: {
+                        show: false
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '万箱',
+                    nameTextStyle:{
+                        color:"#91CAFF",
+                        fontSize:26,
+                        padding: [0, 0, 0, -70]
+                    },
+                    //scale:true,  //不从0开始
+                    axisLabel : {
+                        textStyle: {
+                            fontSize:'26',
+                            color: '#91CAFF'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "#004AAD"
+                        }
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    //max: leftMax,
+                    //min: leftMin,
+                    splitNumber: 5
+                },
+                {
+                    type: 'value',
+                    name: '亿元',
+                    nameTextStyle:{
+                        color:"#91CAFF",
+                        fontSize:26,
+                        padding: [0, 0, 0, 70]
+                    },
+                    //min: 0,
+                    //max: 13000,
+                    //interval: 3000,
+                    axisLabel : {
+                        textStyle: {
+                            fontSize:'26',
+                            color: '#91CAFF'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "#004AAD"
+                        }
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    //max: rightMax,
+                    //min: rightMin,
+                    splitNumber: 5
+                }
+            ],
+            series: [
+                {
+                    name: '税利',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    smooth: true,
+                    symbol: 'none',   //去掉折线上的小圆点
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                width: 5
+                            }
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 1,
+                                y: 0,
+                                x2: 0,
+                                y2: 0,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(255,136,64,0.4)' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: 'rgba(255,255,255,0)' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }
+                        }
+                    },
+                    //data: zdata1
+                    data: data.sl
+                },
+                {
+                    name: '产量',
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'none',   //去掉折线上的小圆点
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                width: 5
+                            }
+                        }
+                    },
+                    //areaStyle: {},
+                    //data: zdata2
+                    data: data.cl
+                },
+                {
+                    name: '销量',
+                    type: 'line',
+                    smooth: true,
+                    symbol: 'none',   //去掉折线上的小圆点
+                    itemStyle: {
+                        normal: {
+                            lineStyle: {
+                                width: 5
+                            }
+                        }
+                    },
+                    //areaStyle: {},
+                    //data: zdata3
+                    data: data.xl
+                }
+            ]
+        };
+        myChartE.clear();
+        myChartE.setOption(optionE);
+    }
+
+    //柱状图
+    function zhutu(jdData,data,years) {
+        document.getElementById('barTrend').style.width=$(".echartsDiv").css('width');
+        var myChartU = echarts.init(document.getElementById("barTrend"));
+        optionU = {
+            baseOption: {
+                timeline: {
+                    data: years,
+                    axisType: 'category',
+                    autoPlay: true,
+                    playInterval: pinpaiAnima, //播放速度
+
+                    left: '5%',
+                    right: '5%',
+                    bottom: '0%',
+                    width: '90%',
+                    show: false,
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'red',
+                            }
+                        },
+                        emphasis: {
+                            textStyle: {
+                                color: 'red'
+                            }
+                        }
+                    },
+                    symbolSize: 10,
+                    lineStyle: {
+                        color: '#red'
+                    },
+                    checkpointStyle: {
+                        borderColor: '#red',
+                        borderWidth: 2
+                    },
+                    controlStyle: {
+                        showNextBtn: true,
+                        showPrevBtn: true,
+                        normal: {
+                            color: '#ff8800',
+                            borderColor: '#ff8800'
+                        },
+                        emphasis: {
+                            color: 'red',
+                            borderColor: 'red'
+                        }
+                    }
+                },
+                title: {
+                    text: '',
+                    right: '2%',
+                    bottom: '8%',
+                    textStyle: {
+                        fontSize: 76,
+                        color: '#91CAFF' //标题字体颜色
+                    }
+                },
+                /*tooltip: {
+                    'trigger': 'axis'
+                },*/
+                calculable: true,
+                grid: {
+                    left: '7%',
+                    right: '2%',
+                    bottom: '5%',
+                    top: '8%',
+                    containLabel: true
+                },
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'red'
+                        }
+                    }
+                },
+                yAxis: [{
+                    offset: '37',
+                    type: 'category',
+                    //inverse: ture,//图表倒叙或者正序排版
+                    data: '',
+                    name: '单位：万箱',
+                    nameTextStyle: {
+                        color: "#91CAFF",
+                        fontSize: 26,
+                        padding: [0, 0, -20, 3340]
+                    },
+                    axisLabel: {
+                        //rotate:45,
+                        show: false,
+                        textStyle: {
+                            fontSize: 32,
+                            color: '#91CAFF'
+                        },
+                    },
+                    axisLine: {
+                        show:false
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                }],
+                xAxis: [{
+                    type: 'value',
+                    //show: false,
+                    name: '',
+                    nameTextStyle: {
+                        color: 'balck'
+                    },
+                    axisLine: {
+                        show:false
+                    },
+                    axisLabel: {
+                        formatter: '{value} '
+                    },
+                    splitLine: {
+                        show: false,
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    },
+                }],
+                series: [{
+                    name: '',
+                    type: 'bar',
+                    label: {
+                        normal: {
+                            fontSize: 26,
+                            color:"#fff",
+                            padding: [15, 0, 0, 0],
+                            show: true,
+                            position: 'right', //数值显示在右侧
+                            formatter: '{c}'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: function (params) {
+                                // build a color map as your need.
+                                //color:function(d){return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);//随机生成颜色
+                                var colorList = barColor; //柱上字体颜色
+                                return colorList[jdData[0].indexOf(params.name)];
+                            }
+                        }
+                    },
+                },
+                    {
+                        name: '',
+                        type: 'bar',
+                        barWidth: '50%',
+                        barGap: '-100%',
+                        label: {
+                            normal: {
+                                show: true,
+                                fontSize: 26,
+                                color:"#fff",
+                                position: 'left', //数值显示在右侧
+                                formatter: function (p) {
+                                    return p.name;
+                                }
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: function (params) {
+                                    // build a color map as your need.
+                                    //color:function(d){return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);//随机生成颜色
+                                    var colorList = barColor;
+                                    return colorList[jdData[0].indexOf(params.name)];
+                                },
+
+                            }
+                        },
+                    }
+                ],
+
+                animationEasingUpdate: 'quinticInOut',
+                animationDurationUpdate: 1200, //动画效果
+            },
+            options: []
+        };
+        for (var n = 0; n < years.length; n++) {
+
+            var res = [];
+            //alert(jdData.length);
+            for (j = 0; j < data[n].length; j++) {
+                res.push({
+                    name: jdData[n][j],
+                    //name: jdData[0][j],
+                    value: data[n][j]
+                });
+            }
+            res.sort(function (a, b) {
+                return b.value - a.value;
+            }).slice(0, 6);
+
+            res.sort(function (a, b) {
+                return a.value - b.value;
+            });
+            var res1 = [];
+            var res2 = [];
+            //console.log(res);
+            for (t = 0; t < res.length; t++) {
+                res1[t] = res[t].name;
+                res2[t] = res[t].value;
+            }
+            optionU.options.push({
+                title: {
+                    text: years[n] + '年'
+                },
+                yAxis: {
+                    data: res1,
+                },
+                series: [{
+                    data: res2
+                }, {
+                    data: res2
+                }]
+            });
+        }
+        myChartU.setOption(optionU);
+    }
+
+
+    //万拆分
+    function tenThNumber(v) {
+        return parseInt(v);
+    }
+    //亿拆分
+    function yiNumber(v,e) {
+        if(v.length == 9){
+            $("#" + e).parents('').parents('span').addClass('yiFive');
+        }
+        return parseInt(v);
+    }
+    function yiNumber2(v,e) {
+        if(v.length == 9){
+            $("#" + e).addClass('yiFiveBai');
+        }
+        return parseInt(v);
+    }
+    //时间
+    function current() {
+        var d = new Date(),
+            str = '';
+        str += d.getFullYear() + '-'; //获取当前年份
+        str += (d.getMonth() + 1 < 10 ? '0' + (d.getMonth() + 1) : d.getMonth() + 1) + '-'; //获取当前月份（0——11）
+        str += (d.getDate() < 10 ? '0' + d.getDate() : d.getDate())+ '&nbsp;&nbsp;';
+        str += (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ':';
+        str += (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes()) + ':';
+        str += d.getSeconds() < 10 ? '0' + d.getSeconds() : d.getSeconds();
+        return str;
+    }
+</script>
+</body>
+</html>

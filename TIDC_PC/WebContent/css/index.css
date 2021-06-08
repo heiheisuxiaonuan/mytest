@@ -1,0 +1,106 @@
+blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul{margin: 0;padding: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html,body {background-color: #FEFEFE;}
+body{font: 14px PingFangSC-Regular,Tahoma,'Microsoft Yahei',sans-serif;background: url("../image/bg.png") no-repeat;width: 2160px;height: 3840px;background-size: 100% 100%;margin: 0 auto;}
+h1, h2, h3, h4, h5, h6, b {font-weight: 400}
+img {border: none}
+li {list-style: none}
+em, strong, i{font-style: normal;}
+.f_l{float: left;}
+
+#index{position: relative;}
+#index .top{position: relative;background: url("../image/topImg.png") no-repeat;width: 2160px;height: 243px;background-size: 100% 100%;overflow: hidden;}
+#index .top .top_tab{position: absolute;left: 1160px;}
+#index .top .top_tab>span{display: inline-block;width: 495px;height: 158px;line-height: 164px;text-align: center;float: left;font-size: 60px;color: #ABF1FF;cursor: pointer;}
+#index .top .top_tab>span.tab_bg{background: url("../image/topTab.png") no-repeat;background-size: 100% 100%;color: #FFE898;}
+#index .top .top_tab span img{position: relative;top: 4px;padding-right: 15px;}
+#index .top .top_tab span:nth-child(2) img{top: 8px;}
+#index #time{position: absolute;top: 190px;right: 20px;font-size: 34px;color: #fff;font-weight: bold;}
+#index .map_div_width{width: 1820px;height: 1159px;}
+/*#index .map_div{padding: 7px 0 0 340px;width: 1820px;height: 1159px;}*/
+#index #mainMap{padding: 7px 0 0 340px;width: 1820px;height: 1159px;}
+#index #mainMap2{padding: 7px 0 0 340px;width: 1820px;height: 1159px;}
+#index #mainMap2>div{width: 1820px!important;}
+#index #mainMap2>div canvas{width: 1820px!important;}
+
+#index .liang_div{width: 2040px;height: 390px;margin: 25px auto 0;border: 2px solid #49A3F8;border-radius: 20px;background: rgba(0, 50, 133, 0.7);background: #002F7C;overflow: hidden;}
+#index .liang_div .dashed{border-right: 2px dashed #1654A7;margin: 27px 0;height: 336px;}
+#index .liang_div .lia_img{width: 243px;height: 100%;text-align: center;border-right: 2px solid #1654A7;background-color: #003285;}
+#index .liang_div .lia_img img{padding-top: 103px;width: 93px;height: 100px;}
+#index .liang_div .lia_img h3{padding-top: 25px;font-size: 70px;color: #73BBFF;}
+#index .liang_div .lia_b{width: 655px;padding: 33px 0 0 50px;}
+#index .liang_div .lia_c{width: 456px;padding: 33px 0 0 50px;}
+#index .liang_div .lia_d{width: auto;padding: 33px 0 0 50px;}
+#index .liang_div .l_c_title{padding-bottom: 42px;}
+#index .liang_div .l_c_title span{font-size: 50px;color: #73BBFF;}
+#index .liang_div .l_c_title em{font-size: 40px;color: #73BBFF;}
+#index .liang_div .l_c_title b{font-size: 30px;color: #73BBFF;vertical-align: bottom;font-weight: bold;}
+#index .liang_div .l_c_title .dxPr{padding-left: 0;display: inline-block;color: #C2F5FF;width: 78px;font-weight: bold;height: 42px;line-height: 42px;text-align: right;padding-right: 10px;background: #1B56C0;border-radius: 6px;}
+#index .liang_div .lia_num{overflow: hidden;position: relative;}
+#index .liang_div .lia_num dl dt{padding-bottom: 29px;}
+#index .liang_div .lia_num .num_day{font-size: 36px;color: #73BBFF;padding-right: 10px;vertical-align: text-bottom;}
+#index .liang_div .lia_num .num_bg{font-size: 48px;color: #C2F5FF;display: inline-block;width: 130px;height: 52px;line-height: 52px;text-align: right;padding-right: 8px;background: #1B56C0;border-radius: 6px;font-weight: 400;}
+/*新版中间蹦数css*/
+#index .liang_div .lia_num .new_num_1 em{width: 131px;overflow: hidden;display: inline-block;height: 100%;}
+#index .liang_div .lia_num .new_num_1 em b{display: inline-block;width: 254px;font-weight: bold;}
+#index .liang_div .lia_num .new_num_2{position: relative;}
+#index .liang_div .lia_num .new_num_2 i{display: inline-block;position: absolute;left: 0;width: 8px;background-color: #2d56c0;height: 82%;z-index: 999;margin-top:5px;}
+#index .liang_div .lia_num .new_num_2 em{width: 140px;overflow: hidden;display: inline-block;height: 100%;position: relative;}
+#index .liang_div .lia_num .new_num_2 b{display: inline-block;width: 244px;position: absolute;left: -114px;font-weight: bold;}
+/*蹦数结束*/
+/*销售额亿位五位*/
+#index .liang_div .lia_num .yiFive{width: 164px;}
+#index .liang_div .lia_num .yiFive em{width: 154px;}
+#index .liang_div .lia_num .yiFive em b{width: 275px;}
+#index .liang_div .lia_num .new_num_2 .yiFiveBai{width: 291px;left: -162px;}
+
+#index .liang_div .lia_num .num_bg_greed{color: #89F16B;}
+#index .liang_div .lia_num .num_unit{font-size: 24px;color: #73BBFF;padding-right: 5px;vertical-align: bottom;}
+#index .liang_div .lia_num .lia_jd_r{position: relative;z-index: 99;}
+/*#index .liang_div .lia_num .lia_jd{width: 202px;height: 202px;margin: 7px 0 0 34px;position: relative;}*/
+#index .liang_div .lia_num .lia_jd{width: 300px;height: 300px;position: absolute;right: 2px;top: -34px;}
+#index .liang_div .lia_num .lia_jd>div{width:100%;height:100%;background: #002F7C;}
+#index .liang_div .lia_num .lia_jd>div>strong{font-size: 41px;color: #C2F5FF;position:absolute;top:104px;text-align:center;display:block;width:100%;left:0;}
+#index .liang_div .lia_num .lia_jd>p{font-size:26px;width:100%;text-align:center;color:#9FDEEB;position: absolute;top: 108px;}
+#index .xiang_kucun{width: 2040px;margin: 32px auto 0;overflow: hidden;}
+#index .xiang_kucun>div{float: left;width: 656px;height: 182px;position: relative;background-color: #003285;border: 2px solid #49A3F8;border-radius: 20px;}
+#index .xiang_kucun>div:nth-child(1){margin-right: 30px;}
+#index .xiang_kucun>div:nth-child(2){margin-right: 30px;}
+#index .xiang_kucun>div img{position: absolute;top: 44px;left: 67px;width: 96px;height: 94px;}
+#index .xiang_kucun>div dl{position: absolute;top: 26px;left: 200px;}
+#index .xiang_kucun>div dl dd{font-size:50px;color: #73BBFF;}
+#index .xiang_kucun>div dl dd em{font-size:40px;color: #73BBFF;}
+#index .xiang_kucun>div dl dt{padding-top: 10px;}
+#index .xiang_kucun>div dl dt .num_bg{font-size: 48px;color: #C2F5FF;display: inline-block;width: 130px;height: 52px;line-height: 52px;text-align: right;padding-right: 8px;background: #1B56C0;border-radius: 6px;font-weight: 400;}
+/*新版中间蹦数css*/
+#index .xiang_kucun>div dl dt .new_num_1 em{width: 131px;overflow: hidden;display: inline-block;height: 100%;}
+#index .xiang_kucun>div dl dt .new_num_1 em b{display: inline-block;width: 254px;font-weight: bold;}
+#index .xiang_kucun>div dl dt .new_num_2{position: relative;}
+#index .xiang_kucun>div dl dt .new_num_2 i{display: inline-block;position: absolute;left: 0;width: 6px;background-color: #2d56c0;height: 82%;z-index: 999;margin-top:5px;}
+#index .xiang_kucun>div dl dt .new_num_2 em{width: 140px;overflow: hidden;display: inline-block;height: 100%;position: relative;}
+#index .xiang_kucun>div dl dt .new_num_2 b{display: inline-block;width: 252px;width: 239px;position: absolute;left: -118px;left: -113px;font-weight: bold;}
+/*蹦数结束*/
+#index .xiang_kucun>div dl dt .num_bg_greed{color: #89F16B;}
+#index .xiang_kucun>div dl dt .num_unit{font-size: 24px;color: #73BBFF;padding-right: 5px;vertical-align: bottom;}
+#index .echartsDiv{width: 2040px;margin: 63px auto 0;position: relative;}
+#index .echartsDiv .eTitle{width: 1206px;height: 138px;line-height: 138px;margin: 0 auto;background: #00216E;border: 2px solid #49A3F8;border-radius: 20px;font-size: 70px;color: #91CAFF;text-align: center;position: relative;z-index: 999;}
+#index .echartsDiv .lineDiv{width: 100%;height: 1189px;border: 2px solid #49A3F8;background: rgba(0, 50, 133, 0.7);border-radius: 20px;position: absolute;top: 73px;z-index: 10;}
+@media screen and (min--moz-device-pixel-ratio:0) {
+    #index .liang_div .lia_num .new_num_1 em b{
+        width: 244px;
+    }
+    #index .liang_div .lia_num .new_num_2 b{
+        left: -116px;
+    }
+    #index .xiang_kucun>div dl dt .new_num_1 em b{
+  	    width: 244px;
+	}
+	#index .xiang_kucun>div dl dt .new_num_2 b{
+    	left: -115px;
+	}
+}
+
+
+
+
+
+

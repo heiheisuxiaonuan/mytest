@@ -1,0 +1,26 @@
+/*-----------------------------------loadingº”‘ÿcss----------------------------------*/
+.hide-box{
+	position: absolute;
+    top: 0px;
+    font-family: Microsoft YaHei;
+    display:none;
+    z-index:99999;
+    left: 10px;
+    height: 526px;
+    width: 1234px;
+    color:#fff;
+    font-size:26px;
+    text-align:center;
+    border-radius: 15px 15px 0px 0px;
+	background: rgba(0,0,0,.4);
+}
+.hide-box:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.loading{
+	position: absolute; top:230px; left:550px;
+}
+/*-----------------------------------loadingº”‘ÿcssΩ· ¯----------------------------------*/

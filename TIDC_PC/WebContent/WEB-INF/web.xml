@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>dcpc</display-name>	<welcome-file-list>		<welcome-file>index.html</welcome-file>	</welcome-file-list>	<!-- XSS过滤器，防止非法脚本跨站攻击 -->	<filter>		<filter-name>XSSFilter</filter-name>		<filter-class>com.icss.util.XSSFilter</filter-class>	</filter>	<filter-mapping>		<filter-name>XSSFilter</filter-name>		<url-pattern>/*</url-pattern>	</filter-mapping>	<session-config>		<session-timeout>-1</session-timeout>	</session-config> 	<servlet>		<description>		</description>		<display-name>TjfxServlet</display-name>		<servlet-name>TjfxServlet</servlet-name>		<servlet-class>com.icss.tjfx.TjfxServlet</servlet-class>	</servlet>
+	<servlet>		<description>		</description>		<display-name>WelcomeServlet</display-name>		<servlet-name>WelcomeServlet</servlet-name>		<servlet-class>com.icss.welcome.WelcomeServlet</servlet-class>	</servlet>
+	
+	<!-- <servlet>
+
+        <servlet-name>pushlet</servlet-name>
+
+        <servlet-class>
+
+            nl.justobjects.pushlet.servlet.Pushlet
+
+        </servlet-class>
+
+        <load-on-startup>1</load-on-startup>
+
+    </servlet>
+
+    <servlet-mapping>
+
+        <servlet-name>pushlet</servlet-name>
+
+        <url-pattern>/pushlet.srv</url-pattern>
+
+    </servlet-mapping> -->
+    
+	<servlet-mapping>		<servlet-name>TjfxServlet</servlet-name>		<url-pattern>/TjfxServlet</url-pattern>	</servlet-mapping>	<servlet-mapping>		<servlet-name>WelcomeServlet</servlet-name>		<url-pattern>/WelcomeServlet</url-pattern>	</servlet-mapping></web-app>

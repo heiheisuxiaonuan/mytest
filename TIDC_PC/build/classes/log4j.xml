@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="AutoDirFile" class="com.icss.pangu.logging.AutoDirFileAppender">
+		<param name="File" value="/web_data/tidc_pc/tidc_pc.log"/>
+		<param name="RootDir" value="/web_data/tidc_pc/"/>
+		<param name="Sequence" value="TimeToName"/>
+		<param name="DatePattern" value="yyyyMMddHH"/>
+		<param name="DeleteDays" value="15"/>
+		<param name="Append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{HH:mm:ss.SSS} (%F:%L) %m%n"/>
+		</layout>
+	</appender>
+    <appender name="myConsole" class="org.apache.log4j.ConsoleAppender">  
+	    <layout class="org.apache.log4j.PatternLayout">  
+	        <param name="ConversionPattern"
+	            value="[%d{dd HH:mm:ss.SSS\}](%F:%L) %m%n" />  
+	     </layout>  
+	 </appender>  
+	<appender name="errorFile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="threshold" value="warn" />
+        <param name="file" value="/web_data/tidc_pc/error/tidc_pc.log" />
+        <param name="append" value="true" />
+        <param name="datePattern" value="'.'yyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%-5p][%d{yyyy-MM-dd HH:mm:ss.SSS}][%c] :%m%n" />
+        </layout>
+    </appender>
+     <logger name="com">
+		<level value="error"/>
+		<appender-ref ref="errorFile"/>
+	</logger> 
+    <logger name="com.icss">
+		<level value="info"/> 
+		<appender-ref ref="AutoDirFile"/> 
+		<!-- <appender-ref ref="myConsole"/>  -->
+	</logger>
+ </log4j:configuration>
